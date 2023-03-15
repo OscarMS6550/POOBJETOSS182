@@ -1,13 +1,18 @@
 from tkinter import*
 from tkinter import Entry
+from tkinter import messagebox
+from tkinter import ttk
+import tkinter as tk
 from Codigo import*
+
 
 ventana = Tk()
 ventana.title("GENERADOR DE MATRICULAS")
 ventana.geometry("600x400")
-
+        
 seccion1=Frame(ventana,bg="White")
 seccion1.pack(expand=True,fill='both')
+
 
 nombre = Label(ventana, text="Ingresa tu nombre:", bg="red")
 nombre.place(x=50,y=50)
@@ -40,11 +45,15 @@ Carrera.place(x=50,y=180)
 carrera = Entry(width=30)
 carrera.place(x=200,y=180)
 
-validaccion = Estudiante(nombre1,Apaterno,Amaterno,ANacimiento,carrera)
+Ano= Label(ventana, text="Ingresa el año", bg="red")
+Ano.place(x=50,y=210)
 
-BotonValidar=Button(seccion1,text="Validar",bg="#255748",fg="white",command=validaccion.validar)
-BotonValidar.pack()
+Aactual = Entry(width=30)
+Aactual.place(x=200,y=210)
 
+accion = Button(seccion1,text="Continuar",bg="#255",command=ms)
+accion.place(x=150,y=200)
 
 
 ventana.mainloop()
+
